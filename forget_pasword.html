@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="icon" sizes="192x192" href="https://material.io/static/images/simple-lp/favicons/components-192x192.png">
+    <link rel="shortcut icon" href="https://material.io/static/images/simple-lp/favicons/components-72x72.png">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<style>
+    body {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+    }
+    
+    .login-body {
+        margin: 32px auto;
+        padding: 16px;
+        width: 350px;
+        height: 350px;       
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-title {
+        
+        text-align: left;
+
+    }
+    .loginform {
+        padding: 16px;
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        height: 300px;
+        
+    }
+    
+
+    .button-container {
+    padding-top: 16px;
+       
+    }
+
+    .button-container button {
+        margin: 3px;
+    }
+</style>
+
+<body class="login-body mdc-elevation--z5">
+    <div class="loginform">
+        <div class="login-title">
+            <h1 class>Forget Password?</h1>
+            <p>Enter the email address associated with your account and we will send you a link to reset your password.</p>
+        </div>
+        <form class="myForm" action="dashboard.html">
+            <div class="mdc-text-field mdc-text-field--filled email">
+                <span class="mdc-text-field__ripple"></span>
+                <input type="email" class="mdc-text-field__input" aria-labelledby="email-label" name="email"
+                    required>
+                <span class="mdc-floating-label" id="email-label">Email address</span>
+                <span class="mdc-line-ripple"></span>
+            </div>
+            
+            <div class="button-container">
+               
+                <button class="mdc-button mdc-button--raised request-password">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">
+                        requestpassword reset
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+        const textFieldelelem = [].slice.call(document.querySelectorAll('.mdc-text-field'));
+        textFieldelelem.forEach((textFieldel) => {
+            mdc.textField.MDCTextField.attachTo(textFieldel);
+
+        });
+    </script>
+</body>
+
+</html>
