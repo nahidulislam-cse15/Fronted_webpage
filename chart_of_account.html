@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart of account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto' type='text/css'>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-size: 1em;
+      font-family: Roboto, sans-serif;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .app_body {
+      margin-top: 70px;
+      width: 100%;
+      padding: 10px;
+    }
+    #footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 50px;
+      background-color: azure;
+      color: green;
+
+    }
+
+    .footer-text {
+      padding: 1em;
+      text-align: center;
+    }
+
+    </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <section id="header">
+      <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+              aria-label="Open navigation menu">menu</button>
+            <span class="mdc-top-app-bar__title">Master Academy </span>
+          </section>
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <button id="announcementbtn" class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+              aria-label="Search">announcement</button>
+            <div class="mdc-menu-surface--anchor top-menu-gap">
+              <div id="notice_menu" class="mdc-menu mdc-menu-surface">
+                <ul class="mdc-deprecated-list" role="menu" aria-hidden="true" aria-orientation="vertical"
+                  tabindex="-1">
+                  <li class="mdc-deprecated-list-item" role="menuitem">
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">account_circle</i>
+                    <div class="menu-text-group">
+                      <span class="mdc-deprecated-list-item__text">No Message Found</span>
+                      <span id="numeric" class="mdc-deprecated-list-item__text ">00000000</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button id="account" class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+              aria-label="Options">account_circle</button>
+            <div class="mdc-menu-surface--anchor top-menu-gap">
+              <div id="profile_menu" class="mdc-menu mdc-menu-surface">
+                <ul class="mdc-deprecated-list" role="menu" aria-hidden="true" aria-orientation="vertical"
+                  tabindex="-1">
+                  <li class="mdc-deprecated-list-item" role="menuitem">
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">dashboard</i>
+                    <span class="mdc-deprecated-list-item__text">Dashboard</span>
+                  </li>
+                  <li class="mdc-deprecated-list-item" role="menuitem">
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">
+                      lock
+                    </i>
+                    <span class="mdc-deprecated-list-item__text">Change Password</span>
+                  </li>
+                  <li class="mdc-deprecated-list-item" role="menuitem">
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">
+                      logout
+                    </i>
+                    <span class="mdc-deprecated-list-item__text">Logout</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </header>
+    </section>
+    <section id="drawer">
+
+      <aside class="mdc-drawer mdc-drawer--modal ">
+        <div class="mdc-drawer__header">
+          <h3 class="mdc-drawer__title">Master Academy</h3>
+          <h6 class="mdc-drawer__subtitle">master.com.bd</h6>
+        </div>
+        <div class="mdc-drawer__content">
+          <nav class="mdc-list drawer-text">
+            <a class="mdc-list-item mdc-list-item--activated" href="dashboard.html" aria-current="page">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">dashboard</i>
+              <span class="mdc-deprecated-list-item__text">Dashboard</span>
+            </a>
+            <a class="mdc-list-item" href="excel.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">article</i>
+              <span class="mdc-deprecated-list-item__text">Excel file</span>
+            </a>
+            <a class="mdc-list-item" href="monthly_checklist.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">fact_check</i>
+              <span class="mdc-deprecated-list-item__text">Monthly Checklist</span>
+            </a>
+
+            <hr>
+            <!-- <hr class="mdc-list-divider"> -->
+            <h6 class="mdc-list-group__subheader">Accounting</h6>
+            <a class="mdc-list-item" href="account_group.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">snippet_folder</i>
+              <span class="mdc-list-item__text">Account Group</span>
+            </a>
+            <a class="mdc-list-item" href="accoutn_header.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">text_snippet</i>
+              <span class="mdc-list-item__text">Account Header</span>
+            </a>
+            <a class="mdc-list-item" href="chart_of_account.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">account_tree</i>
+              <span class="mdc-list-item__text">Chart of Account</span>
+            </a>
+
+            <h6 class="mdc-list-group__subheader">Report</h6>
+            <a class="mdc-list-item" href="Activity_log.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">search</i>
+              <span class="mdc-list-item__text">Activiy Log</span>
+            </a>
+            <a class="mdc-list-item" href="login_session.html">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">swap_vert</i>
+              <span class="mdc-list-item__text">Login Session</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <div id="scrollbar" class="mdc-drawer-scrim">
+      </div>
+    </section>
+
+  <div class="app_body">
+
+    <!-- 3 setup a container element -->
+    <form action="">
+      <input type="text">
+      <button type="submit">Search</button>
+    </form>
+      <div id="jstree">
+        <!-- in this example the tree is populated from inline HTML -->
+        <ul>
+          <li>COA
+            <ul>
+              <li id="Asset">Asset
+              <ul>
+                <li id="">Non Current Assets
+                    <ul >
+                        <li id="">Investments</li>                 
+                        <li>Fixed Assets</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>FDR</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Fixed Assets Disposal</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Rou Asssets</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Accumulated Depreciation</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Accumulated Lease Depreciation</li>
+                    </ul>                                    
+                </li>
+                <li>Current Assets
+                  <ul>
+                        <li id="">Accounts Receivable</li>                       
+                        <li>Advance deposit & Prepayment</li>
+                        <li id="">Cash & Bank</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Advances & Deposits</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Current Tax Assets</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Employee Loan</li>
+                        <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Waseem Traders Receivables</li>
+                    </ul>   
+                </li>
+              </ul>
+            </li>
+              <li>Liability
+                <ul>
+                  <li id="">Longterm Liability
+                      <ul>
+                          <li data-jstree='{"icon":""}'>Bank Loan</li>                 
+                  
+                      </ul>                                    
+                  </li>
+                  <li>Current Liabilities
+                    <ul>
+                          <li id="">Accounts Payable</li>                       
+                          <li>Duties & Taxes</li>
+                          <li id="">Cash & Bank</li>
+                          <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Provisions</li>
+                          <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Short Term Loan</li>
+                          <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'> IDLC Working Capital</li>
+                          <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Lease Liability</li>
+                      </ul>   
+                    </li>
+                  
+                </ul>
+              </li>
+              <li id="">Equity
+                <ul>
+                    <li id="">Capital
+                    <ul>
+                    <li>Drawings Account</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'> Share Money Deposit</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Convertible Preferred Shares</li>
+                    </ul>
+                  </li>
+                    <li>Retained Earnings</li>
+                  
+                    <li>Opening Balance Equity</li>
+                  </ul>
+              </li>
+              <li>Revenue
+                <ul>
+                  <li>Revenue
+                    <ul>
+                    <li id="">Indirect Income</li>
+                    <li>Non Operating Income</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Payment Processing Fees Portwallet</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>CXB Eshop Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>WFP Tender Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Tangail Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Software Revenue</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Banner Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Ecommerce Service</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Other Revenue</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Wastage Sales</li>
+                    <li data-jstree='{ "icon" : "flaticon2-analytics text-success " }'>Delivery Fees</li>
+                  </ul>
+                </ul>
+              </li>
+              <li>Expense
+                <ul>
+                    <li id="">Direct Expense
+                    <ul>
+                    <li id="">Cost of Revenue</li>
+                    <li> COGS</li>
+                    <li>Purchase</li>
+                  </ul>  
+                  </li>
+                    <li>Indirect Expense
+                      <ul>
+                        <li id="">Admin. Expenses</li>
+                        <li> Extra-ordinary Item</li>
+                        
+                      </ul>  
+                    </li>
+                    
+                  </ul>
+              </li>
+            </ul>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4 include the jQuery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <!-- 5 include the minified jstree source -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js" integrity="sha512-TGClBy3S4qrWJtzel4qMtXsmM0Y9cap6QwRm3zo1MpVjvIURa90YYz5weeh6nvDGKZf/x3hrl1zzHW/uygftKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+     $(document).ready(function () {
+        // 6 create an instance when the DOM is ready
+        $('#jstree').jstree({
+                 "plugins":["checkbox"]                
+        });
+        // 7 bind to events triggered on the tree
+        $('#jstree').on("changed.jstree", function (e, data) {
+          console.log(data.selected);
+        });
+       
+      });
+    </script>
+    <footer id="footer">
+      <div class="footer-text">© 2022 Master Academy</div>
+  
+    </footer>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+  
+    <script>
+      const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+      const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarElement);
+      const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+      topAppBar.setScrollTarget(document.getElementById('scrollbar'));
+      topAppBar.listen('MDCTopAppBar:nav', () => {
+        drawer.open = !drawer.open;
+      });
+      const menu = mdc.menu.MDCMenu.attachTo(document.querySelector('#profile_menu'));
+
+    const actbtn = document.querySelector('#account');
+    actbtn.addEventListener("click", () => {
+      menu.open = !menu.open;
+    });
+    const menu2 = mdc.menu.MDCMenu.attachTo(document.querySelector('#notice_menu'));
+
+    const actbtn2 = document.querySelector('#announcementbtn');
+    actbtn2.addEventListener("click", () => {
+      menu2.open = !menu2.open;
+    });
+  
+    </script>
+
+</body>
+</html>
